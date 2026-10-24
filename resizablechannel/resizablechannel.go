@@ -99,4 +99,5 @@ func (c *ResizableChannel[V]) dynamicChange() {
 	close(c.length)
 	close(c.output)
 	close(c.capacity)
+	close(c.resize)
 }
