@@ -37,11 +37,11 @@ func (q *Queue[V]) Head() *V {
 	return q.buf[q.head]
 }
 
-func (q *Queue[V]) Push(elem V) {
+func (q *Queue[V]) Push(elem *V) {
 	if q.length == len(q.buf) {
 		q.resize()
 	}
-	q.buf[q.tail] = &elem
+	q.buf[q.tail] = elem
 	q.tail = (q.tail + 1) & (len(q.buf) - 1)
 	q.length++
 }
